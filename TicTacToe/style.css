@@ -66,3 +66,11 @@ body{
 .hide{
     display: none;
 }
+
+.turn0color{
+    color: red;
+}
+
+.turnXcolor{
+    color: purple;
+}

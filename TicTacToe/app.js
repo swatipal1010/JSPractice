@@ -31,9 +31,11 @@ boxes.forEach((box) => {
     box.addEventListener("click", () => {
         if (turn0) {
             box.innerText = "0";
+            box.classList.add("turn0color");
             turn0 = false;
         } else {
             box.innerText = "X";
+            box.classList.add("turnXcolor");
             turn0 = true;
         }
         count++;
