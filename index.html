@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Practice</title>
+
+    <style>
+        .highlight{
+            background-color: blueviolet;
+            color: white;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id="myElement1">
+        <a href="#" id="myLink">Click Me</a>
+        <p id="demo" class="First Para">Hello</p>
+        <button id = "myButton">Click me!!</button>
+    </div>
+    
+    <div id= "myElement2" class="box">
+        <p id="para">Good Morning!!</p><br>
+        <button id= "myElementBtn" onclick="changeColor()">Click Here to Change Color</button>
+    </div>
+
+
+<script>
+  // Adding an event to a link when it is clicked
+  document.getElementById('myLink').addEventListener('click', function() {
+    alert('Hello World!');
+  });
+
+  //Changing inner text of paragraph
+  document.getElementById("demo").innerText = "Hello Guys"
+
+  document.getElementById("myButton").addEventListener("click", function(){
+                                                                prompt("Have you clicked the button?");
+  })
+
+  //getting attribute of paragraph
+  let para1 = document.querySelector("p");
+  console.log(para1.getAttribute("class"));
+
+  //Changing background color of a button
+  let btnColor = document.getElementById("myButton");
+  btnColor.style.backgroundColor = "yellow";
+
+  //adding new elment to div element
+  let newBtn = document.createElement("button");
+  newBtn.innerText = "Start"
+  let divEl1 = document.querySelector("div");
+  divEl1.prepend(newBtn);
+
+
+  //Function to change the color of the button
+  function changeColor(){
+    let element = document.getElementById("myElementBtn");
+    element.classList.toggle('highlight');
+  }
+
+  //adding a child element
+  let newEl = document.createElement("h2");
+  newEl.textContent="Practicing"
+  divEl1.before(newEl);
+  newEl.classList.add("headerH2");
+
+  //remove element paragraph with the id 'para'
+  let divEl2 = document.getElementById("myElement2");
+  let para2 = document.getElementById("para");
+  divEl2.removeChild(para2);
+
+  //Finding element h2 using relationship
+  if(document.body.contains("#headerH2")){
+    alert("Header h2 is present inside the body.")
+  }
+
+</script>
+
+</body>
+</html>
